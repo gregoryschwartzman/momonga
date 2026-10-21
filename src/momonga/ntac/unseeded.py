@@ -6,7 +6,7 @@ One step is `step()`:
     next_seed              the vertex whose promotion to a new cluster lowers the cost most
     seeded_iterations      seeded NTAC iterations with trusted means, from those centres
 
-On backend "cpu" this reproduces the reference solver exactly.
+On backend "cpu" this reproduces the original NTAC implementation exactly.
 """
 from __future__ import annotations
 

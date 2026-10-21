@@ -1,10 +1,10 @@
 """The weighted-Jaccard distance from every vertex profile to every centre, tiled, and its argmin.
 
-The reference solver loops vertex -> centre -> edge and reads `M[i, indices[p]]`: for every vertex it re-streams the
+The original NTAC implementation loops vertex -> centre -> edge and reads `M[i, indices[p]]`: for every vertex it re-streams the
 whole dense centre matrix with scattered loads.  Here the loops are vertex -> edge -> centre over a transposed,
 compacted tile of centres, so the tile stays in cache and the innermost loop is contiguous.
 
-Bit-identity with the reference: it accumulates the positive part of (profile - centre) from `0.0`, which numba
+Bit-identity with the original: it accumulates the positive part of (profile - centre) from `0.0`, which numba
 types as float64 even though the profiles and centres are float32, and computes the numerator
 (centre sum - profile sum) + 2 smax left to right, so the first difference is a float32 subtraction and the rest is
 float64.  Both are mirrored exactly below.

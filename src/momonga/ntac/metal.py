@@ -9,8 +9,8 @@ Same algebra as kernels.jaccard:
 One thread per (vertex, centre); the centres are passed transposed (width x n_centres) so neighbouring threads,
 which differ in the centre, read neighbouring addresses.
 
-Precision: Metal has no float64 while the reference accumulates smax in float64.  The accumulator here is a
-double-float (two float32 limbs, about 48 bits of mantissa), which reproduces the reference exactly when the
+Precision: Metal has no float64 while the original NTAC implementation accumulates smax in float64.  The accumulator here is a
+double-float (two float32 limbs, about 48 bits of mantissa), which reproduces the original exactly when the
 centres are integer-valued and is within one float32 ulp otherwise.  The distances are therefore bit-identical to
 the CPU's; the seed-selection gains are reduced per block of vertices into float32 and summed on the host in
 float64, so an argmax over them can differ from the CPU at a near-tie.

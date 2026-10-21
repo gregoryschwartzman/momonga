@@ -1,4 +1,4 @@
-"""Unseeded NTAC (Jourdan et al., the reference solver this reproduces): the starting partitions the method refines."""
+"""Unseeded NTAC (Jourdan et al.; this reproduces the original implementation): the starting partitions the method refines."""
 
 from .ntac import Ntac
 

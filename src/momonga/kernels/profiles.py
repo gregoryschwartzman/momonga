@@ -1,7 +1,7 @@
 """The vertex profiles, built in one pass over the edges: the kernel behind GraphData.profiles.
 
 The profile of a vertex against a partition is its weight to each cluster, then its weight from each cluster:
-2 x n_clusters entries per vertex, kept sparse.  The reference NTAC solver builds a dense n x 2k array that is a few
+2 x n_clusters entries per vertex, kept sparse.  The original NTAC implementation builds a dense n x 2k array that is a few
 percent non-zero and converts it to CSR for every distance call; this writes the same numbers straight into CSR,
 into buffers sized by vertex degree, so the workspace is allocated once per graph and does not depend on the number
 of clusters.

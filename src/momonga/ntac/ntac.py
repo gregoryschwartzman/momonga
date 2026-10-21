@@ -26,7 +26,7 @@ class Ntac:
     trajectory      trajectory[j] is the partition with j clusters, for every j reached so far (row 0 unused)
     jaccard_costs   jaccard_costs[j] is NTAC's own cost of trajectory[j]
     backend         where the steps run: "auto" (cuda > metal > cpu), "cuda", "metal" or "cpu";
-                    "cpu" reproduces the reference NTAC solver bit for bit
+                    "cpu" reproduces the original NTAC implementation bit for bit
     """
 
     def __init__(self, data, backend="auto"):
@@ -51,7 +51,7 @@ class Ntac:
         candidate_fraction    the fraction of vertices tried as the next seed
         batch_size            how many candidates are scored at a time (memory only)
 
-        The defaults are the reference solver's.  Stops early when no further seed exists.  Returns the last
+        The defaults are the original NTAC implementation's.  Stops early when no further seed exists.  Returns the last
         partition.
         """
         log = callback(log)

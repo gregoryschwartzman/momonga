@@ -1,6 +1,6 @@
 """NTAC's own cost: the mean weighted-Jaccard distance of each vertex to its cluster's median profile.
 
-This is the 'jac' the reference solver reports; NTAC's answer is the partition of its trajectory that minimises
+This is the 'jac' the original NTAC implementation reports; NTAC's answer is the partition of its trajectory that minimises
 it.  It is used nowhere else: the NTAC step assigns vertices to cluster means, and the refinement uses the
 description length.
 
@@ -11,7 +11,7 @@ Two observations make it cheap without densifying every cluster:
   2. min(a, b) = 0 wherever a = 0, so the overlap needs only the vertex's own nonzeros, and
      sum(max) = sum(vertex) + sum(median) - overlap.
 
-The medians are bit-identical to the reference's; the mean is accumulated in float32 like the reference's.
+The medians are bit-identical to the original's; the mean is accumulated in float32 like the original's.
 """
 from __future__ import annotations
 

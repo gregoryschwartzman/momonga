@@ -1,6 +1,6 @@
 """Each vertex's weighted-Jaccard distance to its own cluster's centre.
 
-`own_distances` reproduces the reference solver's summation order exactly: it walks every column, in order, in
+`own_distances` reproduces the original NTAC implementation's summation order exactly: it walks every column, in order, in
 float64 for the numerator and float32 for the denominator.  `assigned_distances` is the support-only form,
 O(nnz) per vertex, used only as an upper bound for the accelerators' pruning, so it need not match that order.
 """

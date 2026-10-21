@@ -1,7 +1,7 @@
 """Kernels only the NTAC steps use: cluster means, trusted groups, candidate rows, seed gains, and the row-sum
 bound the accelerators prune with.
 
-Means sum each cluster's rows in cluster order into a float32 accumulator, which is what the reference solver's
+Means sum each cluster's rows in cluster order into a float32 accumulator, which is what the original NTAC implementation's
 nanmean over a densified block does, so every mean is bit-identical to it.
 """
 from __future__ import annotations
@@ -70,7 +70,7 @@ def means_from_clusters(F, clusters):
 @njit(cache=True)
 def _trusted_groups(cluster_ids, old_cluster_ids, is_seed, n_clusters, offsets, members):
     """Vertices still in the cluster they had last iteration (seeds always kept), grouped by cluster, each group in
-    ascending vertex order: the order the reference's `good[labels[u]].append(u)` loop produced."""
+    ascending vertex order: the order the original's `good[labels[u]].append(u)` loop produced."""
     n = cluster_ids.shape[0]
     for c in range(n_clusters + 1):
         offsets[c] = 0

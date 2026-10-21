@@ -23,7 +23,7 @@ class Momonga:
     data       a GraphData, or a sparse adjacency.  The method never reads expert types; pass
                `data.without_labels()` to make that explicit, and score on the original `data`.
     backend    where the NTAC steps run: "auto" (cuda > metal > cpu), "cuda", "metal" or "cpu"; "cpu" reproduces
-               the reference NTAC solver bit for bit.  The refinement always runs on the CPU.
+               the original NTAC implementation bit for bit.  The refinement always runs on the CPU.
     log        log(line) gets progress lines from every step, e.g. log=print; None for silence
     verbose    also log every merge pass of the refinement
 
@@ -54,7 +54,7 @@ class Momonga:
         candidate_fraction    the fraction of vertices tried as the next seed
         batch_size            how many candidates are scored at a time (memory only)
 
-        The defaults are the reference solver's.  Afterwards `ntac.trajectory[j]` is the partition with j clusters,
+        The defaults are the original NTAC implementation's.  Afterwards `ntac.trajectory[j]` is the partition with j clusters,
         for every j up to n_clusters.  Returns the last partition.
         """
         return self.ntac.run(n_clusters, log=self.log, n_representatives=n_representatives,

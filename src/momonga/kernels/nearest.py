@@ -1,7 +1,7 @@
 """Nearest neighbours between sparse profiles by weighted Jaccard, over the shared columns only.
 
     nearest_by_distance    the shattering's links: the nearest OTHER row by weighted-Jaccard distance, in the
-                           float32 arithmetic of the reference solver (a row at distance one from every other row
+                           float32 arithmetic of the original NTAC implementation (a row at distance one from every other row
                            links to row 0, or row 1 for row 0)
     nearest_other_side     the twin search of the bilateral profiles: the most similar row on the other side by
                            weighted-Jaccard similarity in float64, or -1 when no row shares a column

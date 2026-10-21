@@ -47,7 +47,7 @@ def resolve(backend):
 class Context:
     """What every step of one run shares: the graph (a GraphData, which builds the profiles) and the kernels.
 
-    On backend "cpu" every step is bit-identical to the reference solver.  On an accelerator the distances are
+    On backend "cpu" every step is bit-identical to the original NTAC implementation.  On an accelerator the distances are
     bit-identical, but the seed-selection gains are reduced through float32 block partials, so the argmax can differ
     from the CPU at a near-tie.
     """

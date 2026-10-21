@@ -11,7 +11,7 @@ concisely.
 MOMONGA has two functions, refinement and transfer.
 
 **Refinement** takes a coarse initial partition and improves it by iteratively splitting and merging clusters. The initial partitions come from NTAC (https://github.com/BenJourdan/ntac). This package includes its
-own implementation of unseeded NTAC, which reproduces the reference solver exactly and runs much faster, with Metal and CUDA kernels.
+own implementation of unseeded NTAC, which produces the same partitions as the original and runs much faster, with Metal and CUDA kernels.
 
 **Transfer** takes two graphs and their partitions, corresponding to similar anatomical regions from
 different specimens or from opposite sides of the same connectome. It automatically determines which partition is better and uses that to improve the accuracy of the other partition.
