@@ -45,7 +45,7 @@ A.data = rng.integers(5, 13, size=A.nnz).astype(np.float32)        # synapse cou
 data = GraphData(A, labels=types)                 # the labels are for scoring only
 model = Momonga(data.without_labels())            # the method gets a graph without them
 model.unseeded_ntac(12)                           # NTAC up to twice the true number of types
-model.refine(grid=(6, 12))                        # refine two NTAC starts; the shorter result is kept
+model.refine(grid=(6, 12))                        # refine two NTAC starts; the shorter description length is kept
 print(data.get_metrics(model.ntac_partition()))   # NTAC's own answer
 print(data.get_metrics(model.partition))          # MOMONGA's
 ```
