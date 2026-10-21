@@ -1,7 +1,7 @@
 # MOMONGA
 
 MOMONGA (MDL Optimization for Mapping Of Neuronal Groups from Adjacency) is a fully unsupervised method
-for discovering neuronal cell types from connectivity alone which considerably improves over the state of the art ([NTAC](https://doi.org/10.1038/s41467-025-68044-1)). It uses the minimum description length
+for discovering neuronal cell types from connectivity alone which considerably improves over the state of the art ([NTAC](https://doi.org/10.1038/s41467-025-68044-1)). It uses the minimum description length (MDL)
 principle to identify types through the compression afforded by their shared connectivity: the best
 partition of neurons into clusters is the one that allows the connectome to be described most
 concisely.
