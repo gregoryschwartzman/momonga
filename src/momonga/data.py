@@ -3,8 +3,9 @@
     import momonga
     momonga.download_data()          # ~100 MB into data/graphs, once
 
-The archive holds graphs/<organism>/<rest>.{adj.npz,npz}; data/README.md says what each graph is built from.
-`GraphData.load(name)` reads them from where this function puts them.
+The archive holds graphs/<organism>/<rest>.{adj.npz,npz}: the adjacency (scipy CSR, synapse counts, rows
+presynaptic) and the neurons' `id`, `type` (the expert type, "?" if untyped) and `side`.  The graphs are derived
+from the FlyWire (Codex v783), MaleCNS and MANC connectomes.  `GraphData.load(name)` reads them from here.
 """
 from __future__ import annotations
 
