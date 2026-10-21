@@ -1,0 +1,12 @@
+# local only, not shipped: the exactness checks, and the notes for coding agents
+tests/
+AGENTS.md
+
+# the paper's graphs come from the release asset (momonga.download_data)
+data/graphs/
+momonga_data.zip
+
+__pycache__/
+*.egg-info/
+.venv/
+.DS_Store

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "momonga"
+version = "1.0.0"
+description = "MOMONGA: unsupervised neuronal cell typing from connectivity by minimum description length"
+readme = "README.md"
+authors = [{name = "Gregory Schwartzman"}]
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "numba>=0.59",
+]
+
+# The accelerators run the NTAC steps only; the refinement always runs on the CPU.
+#   metal -> momonga.ntac.metal, needs mlx (Apple silicon)
+#   cuda  -> momonga.ntac.cuda, needs numba.cuda plus a CUDA toolchain that pip cannot install
+[project.optional-dependencies]
+metal = ["mlx>=0.32"]
+
+[project.urls]
+Repository = "https://github.com/gregoryschwartzman/momonga"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
