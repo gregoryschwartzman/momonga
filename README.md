@@ -6,6 +6,8 @@ principle to identify types through the compression afforded by their shared con
 partition of neurons into clusters is the one that allows the connectome to be described most
 concisely.
 
+Paper: [Unsupervised neuronal cell typing from connectivity by minimum description length](paper.pdf).
+
 ![NTAC and MOMONGA on six regions of the fly connectome](assets/summary_bars.png)
 
 MOMONGA has two functions, refinement and transfer.
