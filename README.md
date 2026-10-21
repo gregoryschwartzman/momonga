@@ -6,7 +6,7 @@ principle to identify types through the compression afforded by their shared con
 partition of neurons into clusters is the one that allows the connectome to be described most
 concisely.
 
-![NTAC and MOMONGA on six regions of the fly connectome](docs/summary_bars.png)
+![NTAC and MOMONGA on six regions of the fly connectome](assets/summary_bars.png)
 
 MOMONGA has two functions, refinement and transfer.
 
@@ -36,7 +36,7 @@ from momonga import GraphData, Momonga
 n, n_types = 1500, 6
 rng = np.random.default_rng(0)
 types = np.arange(n) % n_types
-probability = rng.random((n_types, n_types)) * 0.3                 # each pair of types has its own edge probability
+probability = rng.random((n_types, n_types)) * 0.1                 # each pair of types has its own edge probability
 edges = rng.random((n, n)) < probability[types[:, None], types[None, :]]
 np.fill_diagonal(edges, False)
 A = sparse.csr_matrix(edges.astype(np.float32))
