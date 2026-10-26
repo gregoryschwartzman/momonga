@@ -6,7 +6,7 @@ principle to identify types through the compression afforded by their shared con
 partition of neurons into clusters is the one that allows the connectome to be described most
 concisely.
 
-Paper: [Unsupervised neuronal cell typing from connectivity by minimum description length](paper.pdf).
+Paper: [Unsupervised neuronal cell typing from connectivity by minimum description length](https://doi.org/10.64898/2026.10.20.760604) (bioRxiv, 2026).
 
 ![NTAC and MOMONGA on six regions of the fly connectome](assets/summary_bars.png)
 
@@ -54,5 +54,17 @@ print(data.get_metrics(model.partition))          # MOMONGA's
 
 `examples/optic_lobe.py` runs two optic lobes and a transfer between them, minutes on a laptop; it
 downloads the paper's graphs (108 MB) the first time it runs.
+
+## Citation
+
+```bibtex
+@article{schwartzman2026momonga,
+  title   = {Unsupervised neuronal cell typing from connectivity by minimum description length},
+  author  = {Schwartzman, Gregory},
+  journal = {bioRxiv},
+  year    = {2026},
+  doi     = {10.64898/2026.10.20.760604}
+}
+```
 
 MIT license, see [LICENSE](LICENSE).
